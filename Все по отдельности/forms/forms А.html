@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Форма заказа — ЗАО Птицефабрика №1</title>
+  <style>
+    body {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 16px;
+      padding: 30px;
+      background: #fff;
+      color: #000;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin: 0 0 20px;
+      font-weight: bold;
+    }
+
+    form {
+      max-width: 820px;
+      border: 1px solid #ccc;
+      padding: 20px 30px;
+    }
+
+    .row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .row > label {
+      width: 220px;
+      text-align: right;
+      padding-right: 10px;
+      flex-shrink: 0;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="number"] {
+      padding: 3px 5px;
+      border: 1px solid #777;
+      font-size: 15px;
+      font-family: inherit;
+    }
+
+    #surname,
+    #initials,
+    #password {
+      width: 280px;
+    }
+
+    #address {
+      width: 560px;
+    }
+
+    #quantity {
+      width: 90px;
+    }
+
+    .type-group {
+      display: flex;
+      gap: 10px;
+    }
+
+    select {
+      padding: 3px 5px;
+      border: 1px solid #777;
+      font-size: 15px;
+      font-family: inherit;
+      background: #fff;
+    }
+
+    .radio-group,
+    .checkbox-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .radio-group label,
+    .checkbox-row label {
+      width: auto;
+      text-align: left;
+      padding-right: 15px;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      margin: 0;
+      cursor: pointer;
+    }
+
+    textarea {
+      width: 560px;
+      height: 60px;
+      padding: 3px 5px;
+      border: 1px solid #777;
+      font-size: 15px;
+      font-family: inherit;
+      resize: vertical;
+      vertical-align: top;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: 2px solid #3f51b5;
+      outline-offset: 1px;
+    }
+
+    .buttons {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    button {
+      padding: 8px 22px;
+      font-size: 15px;
+      font-family: inherit;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin: 0 8px;
+    }
+
+    button[type="submit"] {
+      background: #2c3e50;
+      color: #fff;
+    }
+
+    button[type="reset"] {
+      background: #e74c3c;
+      color: #fff;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    @media (max-width: 700px) {
+      .row {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .row > label {
+        text-align: left;
+        width: auto;
+        padding-right: 0;
+        margin-bottom: 4px;
+      }
+      #surname,
+      #initials,
+      #password,
+      #address,
+      textarea {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>ЗАО Птицефабрика №1</h1>
+
+  <form action="#" method="post">
+
+    <div class="row">
+      <label for="surname">Фамилия</label>
+      <input type="text" id="surname" name="surname" required>
+    </div>
+
+    <div class="row">
+      <label for="initials">Инициалы</label>
+      <input type="text" id="initials" name="initials" required>
+    </div>
+
+    <div class="row">
+      <label for="password">Пароль</label>
+      <input type="password" id="password" name="password" required>
+    </div>
+
+    <div class="row">
+      <label for="address">Адрес получателя</label>
+      <input type="text" id="address" name="address" required>
+    </div>
+
+    <div class="row">
+      <label for="quantity">Количество</label>
+      <input type="number" id="quantity" name="quantity" min="1" required>
+    </div>
+
+    <div class="row">
+      <label>Тип</label>
+      <div class="type-group">
+        <select id="type1" name="type1">
+          <option value="куриные">Куриные</option>
+          <option value="индюшиные">Индюшиные</option>
+          <option value="перепелиные">Перепелиные</option>
+        </select>
+        <select id="type2" name="type2">
+          <option value="отборные">Отборные</option>
+          <option value="первый_сорт">Первый сорт</option>
+          <option value="второй_сорт">Второй сорт</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <label>Доставка</label>
+      <div class="radio-group">
+        <input type="radio" id="delivery_mail" name="delivery" value="почтой" checked>
+        <label for="delivery_mail">Почтой</label>
+
+        <input type="radio" id="delivery_electronic" name="delivery" value="электронно">
+        <label for="delivery_electronic">Электронно</label>
+
+        <input type="radio" id="delivery_courier" name="delivery" value="курьером">
+        <label for="delivery_courier">Курьером</label>
+      </div>
+    </div>
+
+    <div class="row checkbox-row">
+      <label for="invoice">Требуется накладная</label>
+      <input type="checkbox" id="invoice" name="invoice" value="да">
+    </div>
+
+    <div class="row">
+      <label for="additional">Дополнительная информация</label>
+      <textarea id="additional" name="additional" rows="3"></textarea>
+    </div>
+
+    <div class="buttons">
+      <button type="submit">Заказать</button>
+      <button type="reset">Отменить</button>
+    </div>
+
+  </form>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+/* ============================================
+   ВНЕШНИЙ ФАЙЛ СТИЛЕЙ (внешний метод CSS)
+   ============================================ */
+
+/* Класс .mat — оформление подписи к таблице */
+.mat {
+  text-align: center;
+  color: blue;
+  font-family: "Monotype Corsiva", cursive;
+  text-decoration: line-through;
+  font-weight: bold;
+}
+
+/* Класс .table — общий вид таблицы */
+.table {
+  width: 100%;
+  border: 1px solid black;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+/* Ячейки таблицы */
+.table td {
+  width: 20%;
+  border: 2px solid black;
+  padding: 4px 6px;
+}
+
+/* ============================================
+   ID-селектор (по заданию — обязательно)
+   ============================================ */
+#main-content {
+  background: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+#math-table {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}

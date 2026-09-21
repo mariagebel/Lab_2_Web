@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Таблица Б</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background: #fff;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+
+    /* ====== СТИЛИ КАК У ТАБЛИЦЫ А ====== */
+    table.iksweb {
+      width: 480px;               /* 8 столбцов × 60px = 480px */
+      border-collapse: collapse;
+      border-spacing: 0;
+      table-layout: fixed;
+      height: auto;
+    }
+
+    table.iksweb,
+    table.iksweb td,
+    table.iksweb th {
+      border: 2px solid #000;     /* толстые чёрные линии, как у А */
+    }
+
+    table.iksweb td,
+    table.iksweb th {
+      padding: 0;
+      width: 60px;                /* 480 ÷ 8 = 60px */
+      height: 60px;
+    }
+
+    /* ====== ЦВЕТА ТАБЛИЦЫ Б ====== */
+    .tg-6yod { background: #00e5c0; }   /* бирюзовый */
+    .tg-m9r4 { background: #fdf6c8; }   /* кремовый */
+    .tg-mnhx { background: #ff0000; }   /* красный */
+    .tg-8ytw { background: #0000ff; }   /* синий */
+    .tg-kd4e { background: #00ff00; }   /* зелёный */
+    .tg-s7ni { background: #ffff00; }   /* жёлтый */
+  </style>
+</head>
+<body>
+
+  <h2>Задание 2.2 — Таблица Б</h2>
+
+  <table class="iksweb">
+    <tbody>
+      <!-- Строка 1: бирюза во всю ширину -->
+      <tr>
+        <td class="tg-6yod" colspan="8"></td>
+      </tr>
+
+      <!-- Строка 2: крем | бирюза(6) | крем -->
+      <tr>
+        <td class="tg-m9r4" rowspan="6"></td>
+        <td class="tg-6yod" colspan="6"></td>
+        <td class="tg-m9r4" rowspan="6"></td>
+      </tr>
+
+      <!-- Строка 3: крем | бирюза(4) | крем -->
+      <tr>
+        <td class="tg-m9r4" rowspan="4"></td>
+        <td class="tg-6yod" colspan="4"></td>
+        <td class="tg-m9r4" rowspan="4"></td>
+      </tr>
+
+      <!-- Строка 4: крем | красный | синий | крем -->
+      <tr>
+        <td class="tg-m9r4" rowspan="2"></td>
+        <td class="tg-mnhx"></td>
+        <td class="tg-8ytw"></td>
+        <td class="tg-m9r4" rowspan="2"></td>
+      </tr>
+
+      <!-- Строка 5: крем | зелёный | жёлтый | крем -->
+      <tr>
+        <td class="tg-kd4e"></td>
+        <td class="tg-s7ni"></td>
+      </tr>
+
+      <!-- Строка 6: бирюза(4) -->
+      <tr>
+        <td class="tg-6yod" colspan="4"></td>
+      </tr>
+
+      <!-- Строка 7: бирюза(6) -->
+      <tr>
+        <td class="tg-6yod" colspan="6"></td>
+      </tr>
+
+      <!-- Строка 8: бирюза во всю ширину -->
+      <tr>
+        <td class="tg-6yod" colspan="8"></td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Пример формы регистрации сайта</title>
+  <style>
+    body {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 16px;
+      padding: 30px;
+      background: #fff;
+      color: #000;
+    }
+
+    h2 {
+      font-size: 26px;
+      font-weight: bold;
+      margin: 0 0 16px;
+    }
+
+    form {
+      max-width: 640px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="url"],
+    input[type="file"] {
+      width: 180px;
+      padding: 3px 5px;
+      border: 1px solid #777;
+      font-size: 15px;
+      font-family: inherit;
+      margin-bottom: 10px;
+    }
+
+    textarea {
+      width: 520px;
+      height: 180px;
+      padding: 4px 6px;
+      border: 1px solid #3a5fa0;
+      font-size: 15px;
+      font-family: inherit;
+      margin-bottom: 10px;
+      resize: vertical;
+      display: block;
+    }
+
+    select {
+      width: 180px;
+      padding: 3px 5px;
+      border: 1px solid #777;
+      font-size: 15px;
+      font-family: inherit;
+      margin-bottom: 10px;
+    }
+
+    .file-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .file-row input[type="file"] {
+      margin-bottom: 0;
+      width: auto;
+    }
+
+    .file-name {
+      font-size: 15px;
+      color: #333;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 5px;
+    }
+
+    button {
+      padding: 4px 12px;
+      font-size: 15px;
+      font-family: inherit;
+      font-weight: bold;
+      border: 1px solid #555;
+      background: linear-gradient(#f0f0f0, #d5d5d5);
+      color: #000;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+
+    button:hover {
+      background: linear-gradient(#e5e5e5, #c5c5c5);
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Пример формы регистрации сайта</h2>
+
+  <form action="#" method="POST">
+
+    <label for="login">Логин:</label>
+    <input type="text" id="login" name="login" required>
+
+    <label for="password">Пароль:</label>
+    <input type="password" id="password" name="password" required>
+
+    <label for="url">URL-адрес сайта:</label>
+    <input type="url" id="url" name="url" placeholder="http://" required>
+
+    <label for="site_name">Название сайта:</label>
+    <input type="text" id="site_name" name="site_name" required>
+
+    <label for="description">Описание сайта:</label>
+    <textarea id="description" name="description"></textarea>
+
+    <label for="theme">Тема сайта:</label>
+    <select id="theme" name="theme">
+      <option value="">Тема не выбрана</option>
+      <option value="classic">Классическая</option>
+      <option value="modern">Современная</option>
+      <option value="minimal">Минималистичная</option>
+    </select>
+
+    <label for="banner">Баннер 88x31:</label>
+    <div class="file-row">
+      <input type="file" id="banner" name="banner">
+      <span class="file-name">Файл не выбран.</span>
+    </div>
+
+    <div class="buttons">
+      <button type="reset">Очистить</button>
+      <button type="submit">Отправить</button>
+    </div>
+
+  </form>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Таблица А</title>
+  <style>
+    table.iksweb {
+      width: 720px;              /* фиксированная ширина, не на всю страницу */
+      border-collapse: collapse;
+      border-spacing: 0;
+      height: auto;
+    }
+    table.iksweb, table.iksweb td, table.iksweb th {
+      border: 2px solid #000;    /* линии толще и чёрные */
+    }
+    table.iksweb td, table.iksweb th {
+      padding: 3px;
+      width: 112px;              /* 5 столбцов × 112px = 560px */
+      height: 40px;
+    }
+    table.iksweb th {
+      background: #4e6982;
+      color: #fff;
+      font-weight: normal;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Задание 2.2 — Таблица А</h2>
+
+  <table class="iksweb">
+    <tr>
+      <td colspan="5"></td>
+    </tr>
+    <tr>
+      <td rowspan="3"></td>
+      <td></td>
+      <td rowspan="3"></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td rowspan="3"></td>
+      <td rowspan="3"></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+
+</body>
+</html>
