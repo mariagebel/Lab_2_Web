@@ -1,0 +1,647 @@
+/* ============================================================
+   ПЕРЕМЕННЫЕ И БАЗОВЫЕ СТИЛИ
+   ============================================================ */
+* { box-sizing: border-box; }
+
+:root {
+  --color-primary: #3f51b5;
+  --color-primary-dark: #2c387e;
+  --color-accent: #ff8a00;
+  --color-bg: #eef1f7;
+  --color-surface: #ffffff;
+  --color-text: #222;
+  --color-muted: #555;
+  --radius: 12px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  margin: 0;
+  padding: 80px 20px 20px;
+  font-family: "Segoe UI", "Arial", "Helvetica", sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-bg);
+}
+
+/* ============================================================
+   ШАПКА
+   ============================================================ */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, #3f51b5, #5c6bc0);
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: 0.5px;
+}
+
+header p {
+  margin: 4px 0 0;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* ============================================================
+   НАВИГАЦИЯ
+   ============================================================ */
+nav {
+  position: sticky;
+  top: 68px;
+  z-index: 90;
+  margin: 0 -20px 24px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #dde2ee;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+nav li { flex: 0 0 auto; }
+
+nav a {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+}
+
+nav a:hover {
+  background: var(--color-primary);
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+/* ============================================================
+   СЕКЦИИ
+   ============================================================ */
+section {
+  max-width: 900px;
+  margin: 0 auto 24px;
+  padding: 28px;
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.25s;
+}
+
+section:hover { box-shadow: var(--shadow-hover); }
+
+h2 {
+  margin: 0 0 16px;
+  padding-bottom: 8px;
+  font-size: 24px;
+  color: var(--color-primary);
+  border-bottom: 3px solid var(--color-primary);
+}
+
+h3 {
+  margin: 24px 0 10px;
+  font-size: 18px;
+  color: var(--color-muted);
+}
+
+p { margin: 0 0 12px; }
+
+/* ============================================================
+   ФОТО
+   ============================================================ */
+#about img {
+  float: left;
+  width: 180px;
+  height: auto;
+  margin: 0 20px 12px 0;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: transform 0.3s;
+}
+
+#about img:hover { transform: scale(1.03); }
+
+/* ============================================================
+   СПИСКИ
+   ============================================================ */
+ul, ol {
+  padding-left: 22px;
+  margin: 0 0 12px;
+}
+
+li { margin-bottom: 4px; }
+li::marker { color: var(--color-primary); }
+
+/* ============================================================
+   ОБЫЧНЫЕ ТАБЛИЦЫ (2.1)
+   ============================================================ */
+table {
+  width: 100%;
+  margin: 12px 0 20px;
+  border-collapse: collapse;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+caption {
+  margin-bottom: 8px;
+  font-weight: 700;
+  color: var(--color-primary);
+  text-align: left;
+}
+
+th {
+  padding: 10px 12px;
+  background: var(--color-primary);
+  color: #fff;
+  text-align: left;
+  font-weight: 600;
+}
+
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #e5e8f0;
+}
+
+tbody tr:nth-child(even) { background: #f5f7fb; }
+tbody tr:hover { background: #eef1fb; }
+
+/* ============================================================
+   ССЫЛКИ
+   ============================================================ */
+a {
+  color: #0066cc;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+a:hover {
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
+}
+
+/* ============================================================
+   ЦИТАТА
+   ============================================================ */
+blockquote {
+  margin: 16px 0 0;
+  padding: 12px 18px;
+  background: #f5f7fb;
+  border-left: 4px solid var(--color-primary);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-style: italic;
+  color: var(--color-muted);
+}
+
+blockquote cite {
+  display: block;
+  margin-top: 6px;
+  font-style: normal;
+  font-size: 14px;
+  color: #888;
+}
+
+/* ============================================================
+   DETAILS
+   ============================================================ */
+details {
+  margin: 12px 0 20px;
+  padding: 12px 16px;
+  background: #f5f7fb;
+  border-radius: var(--radius);
+  border-left: 4px solid var(--color-accent);
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--color-primary);
+  outline: none;
+}
+
+summary:hover { color: var(--color-accent); }
+details[open] summary { margin-bottom: 8px; }
+
+/* ============================================================
+   PROGRESS
+   ============================================================ */
+progress {
+  appearance: none;
+  width: 220px;
+  height: 12px;
+  margin-left: 8px;
+  border: none;
+  border-radius: 6px;
+  background: #e5e8f0;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+progress::-webkit-progress-bar { background: #e5e8f0; border-radius: 6px; }
+progress::-webkit-progress-value { background: linear-gradient(90deg, #3f51b5, #5c6bc0); border-radius: 6px; }
+progress::-moz-progress-bar { background: linear-gradient(90deg, #3f51b5, #5c6bc0); border-radius: 6px; }
+
+/* ============================================================
+   ADDRESS
+   ============================================================ */
+address {
+  margin-top: 12px;
+  padding: 10px 14px;
+  background: #f5f7fb;
+  border-radius: var(--radius);
+  font-style: normal;
+  color: var(--color-muted);
+}
+
+/* ============================================================
+   ПОДВАЛ
+   ============================================================ */
+footer {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #2c387e;
+  color: #cfd6f5;
+  text-align: center;
+  border-radius: var(--radius);
+  font-size: 14px;
+}
+
+footer p { margin: 4px 0; }
+
+/* ============================================================
+   ТАБЛИЦА А (задание 2.2)
+   ============================================================ */
+.table-a {
+  width: 720px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+  margin: 12px 0 24px;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+}
+
+.table-a,
+.table-a td,
+.table-a th {
+  border: 2px solid #000;
+}
+
+.table-a td {
+  padding: 3px;
+  width: 112px;
+  height: 40px;
+  background: #fff;
+}
+
+/* ============================================================
+   ТАБЛИЦА Б (задание 2.2)
+   ============================================================ */
+.table-b {
+  width: 480px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: fixed;
+  margin: 12px 0 24px;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
+}
+
+.table-b,
+.table-b td,
+.table-b th {
+  border: 2px solid #000;
+}
+
+.table-b td {
+  padding: 0;
+  width: 60px;
+  height: 60px;
+}
+
+.tg-6yod { background: #00e5c0; }
+.tg-m9r4 { background: #fdf6c8; }
+.tg-mnhx { background: #ff0000; }
+.tg-8ytw { background: #0000ff; }
+.tg-kd4e { background: #00ff00; }
+.tg-s7ni { background: #ffff00; }
+
+/* ============================================================
+   ФОРМА А — Птицефабрика (задание 2.3)
+   ============================================================ */
+.form-poultry {
+  max-width: 820px;
+  border: 1px solid #ccc;
+  padding: 20px 30px;
+  margin-bottom: 30px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+}
+
+.form-poultry .row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.form-poultry .row > label {
+  width: 220px;
+  text-align: right;
+  padding-right: 10px;
+  flex-shrink: 0;
+}
+
+.form-poultry input[type="text"],
+.form-poultry input[type="password"],
+.form-poultry input[type="number"] {
+  padding: 3px 5px;
+  border: 1px solid #777;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+.form-poultry #surname,
+.form-poultry #initials,
+.form-poultry #password { width: 280px; }
+
+.form-poultry #address { width: 560px; }
+
+.form-poultry #quantity { width: 90px; }
+
+.form-poultry .type-group {
+  display: flex;
+  gap: 10px;
+}
+
+.form-poultry select {
+  padding: 3px 5px;
+  border: 1px solid #777;
+  font-size: 15px;
+  font-family: inherit;
+  background: #fff;
+}
+
+.form-poultry .radio-group,
+.form-poultry .checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.form-poultry .radio-group label,
+.form-poultry .checkbox-row label {
+  width: auto;
+  text-align: left;
+  padding-right: 15px;
+}
+
+.form-poultry input[type="radio"],
+.form-poultry input[type="checkbox"] {
+  margin: 0;
+  cursor: pointer;
+}
+
+.form-poultry textarea {
+  width: 560px;
+  height: 60px;
+  padding: 3px 5px;
+  border: 1px solid #777;
+  font-size: 15px;
+  font-family: inherit;
+  resize: vertical;
+  vertical-align: top;
+}
+
+.form-poultry .buttons {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.form-poultry button {
+  padding: 8px 22px;
+  font-size: 15px;
+  font-family: inherit;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0 8px;
+}
+
+.form-poultry button[type="submit"] { background: #2c3e50; color: #fff; }
+.form-poultry button[type="reset"] { background: #e74c3c; color: #fff; }
+.form-poultry button:hover { opacity: 0.9; }
+
+/* ============================================================
+   ФОРМА Б — Регистрация сайта (задание 2.3)
+   ============================================================ */
+.form-register {
+  max-width: 640px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.form-register label {
+  display: block;
+  margin-bottom: 3px;
+}
+
+.form-register input[type="text"],
+.form-register input[type="password"],
+.form-register input[type="url"],
+.form-register input[type="file"] {
+  width: 180px;
+  padding: 3px 5px;
+  border: 1px solid #777;
+  font-size: 15px;
+  font-family: inherit;
+  margin-bottom: 10px;
+}
+
+.form-register textarea {
+  width: 520px;
+  height: 180px;
+  padding: 4px 6px;
+  border: 1px solid #3a5fa0;
+  font-size: 15px;
+  font-family: inherit;
+  margin-bottom: 10px;
+  resize: vertical;
+  display: block;
+}
+
+.form-register select {
+  width: 180px;
+  padding: 3px 5px;
+  border: 1px solid #777;
+  font-size: 15px;
+  font-family: inherit;
+  margin-bottom: 10px;
+}
+
+.form-register .file-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.form-register .file-row input[type="file"] {
+  margin-bottom: 0;
+  width: auto;
+}
+
+.form-register .file-name {
+  font-size: 15px;
+  color: #333;
+}
+
+.form-register .buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.form-register button {
+  padding: 4px 12px;
+  font-size: 15px;
+  font-family: inherit;
+  font-weight: bold;
+  border: 1px solid #555;
+  background: linear-gradient(#f0f0f0, #d5d5d5);
+  color: #000;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.form-register button:hover { background: linear-gradient(#e5e5e5, #c5c5c5); }
+
+/* ============================================================
+   ЗАДАНИЕ 3 — таблицы в HTML
+   ============================================================ */
+.task3-content {
+  font-family: "Times New Roman", Times, serif;
+}
+
+.mat {
+  text-align: center;
+  color: blue;
+  font-family: "Monotype Corsiva", cursive;
+  text-decoration: line-through;
+  font-weight: bold;
+}
+
+.table-math {
+  width: 100%;
+  border: 1px solid black;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.table-math td {
+  width: 20%;
+  border: 2px solid black;
+  padding: 4px 6px;
+}
+
+.back-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 8px 18px;
+  background: var(--color-primary);
+  color: #fff !important;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.back-btn:hover {
+  background: var(--color-primary-dark);
+  border-bottom: none;
+  transform: translateY(-1px);
+}
+
+/* ============================================================
+   АДАПТИВ
+   ============================================================ */
+@media (max-width: 700px) {
+  body { padding: 72px 12px 12px; }
+
+  header h1 { font-size: 18px; }
+  header p { font-size: 13px; }
+
+  nav { top: 62px; margin: 0 -12px 16px; padding: 8px 12px; }
+
+  section { padding: 18px; }
+  h2 { font-size: 20px; }
+
+  #about img {
+    float: none;
+    display: block;
+    width: 140px;
+    margin: 0 auto 16px;
+  }
+
+  progress { width: 140px; }
+
+  .table-a, .table-b { width: 100%; }
+
+  .form-poultry .row { flex-direction: column; align-items: flex-start; }
+  .form-poultry .row > label {
+    text-align: left;
+    width: auto;
+    padding-right: 0;
+    margin-bottom: 4px;
+  }
+  .form-poultry #surname,
+  .form-poultry #initials,
+  .form-poultry #password,
+  .form-poultry #address,
+  .form-poultry textarea { width: 100%; }
+
+  .form-register input[type="text"],
+  .form-register input[type="password"],
+  .form-register input[type="url"],
+  .form-register textarea,
+  .form-register select { width: 100%; }
+}
